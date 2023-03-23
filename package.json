@@ -1,11 +1,14 @@
 {
-  "name": "com.example.baseapp",
-  "displayName": "BaseApp",
+  "name": "io.cordova.cordovaapp",
+  "displayName": "CordovaApp",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cordova:setup": "npm install && cordova platform add android",
+    "cordova:check": "cordova requirements && cordova platform ls",
+    "android:prebuild": "cordova platform rm android && cordova platform add android",
+    "android:emulate": "cordova build android && cordova run android"
   },
   "keywords": [
     "ecosystem:cordova"
